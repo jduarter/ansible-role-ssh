@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: "unxnn"
+  role_name: "ssh"
   description: 'This Ansible role provides numerous security-related ssh configurations, providing all-round base protection.'
   license: License (MIT)
   min_ansible_version: '2.5'
