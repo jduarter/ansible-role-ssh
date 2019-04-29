@@ -1,0 +1,27 @@
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=3600
+      when: ansible_os_family == 'Debian'
+    - name: Fix for Missing privilege separation directory /run/sshd
+      file:
+        path: "/var/run/sshd"
+        state: directory
+    - name: Install openSSH
+      package:
+        name: openssh-server
+        state: present
+    - name: Check host keys exist
+      stat:
+        path: "/etc/ssh/ssh_host_ed25519_key"
+      register: ed25519_key
+    - name: Generate host keys
+      command: 'ssh-keygen -A'
+      when: not ed25519_key.stat.exists
+
+  roles:
+    - role: unxnn.ssh
