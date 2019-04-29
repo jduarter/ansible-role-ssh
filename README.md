@@ -119,6 +119,6 @@ either run the playbook as `root` (without `become: yes` at the playbook level),
 
 This is a bug with Ansible: see [here](https://github.com/ansible/ansible/issues/17490) for more information.
 
-## License and Author
+## License
 
 MIT
