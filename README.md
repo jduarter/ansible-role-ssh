@@ -1,6 +1,6 @@
 # Ansible Role: ssh
 
-[![Build Status](https://travis-ci.org/unxnn/ansible-ssh.svg?branch=master)](https://travis-ci.org/unxnn/ansible-ssh)
+[![Build Status](https://travis-ci.org/unxnn/ansible-role-ssh.svg?branch=master)](https://travis-ci.org/unxnn/ansible-role-ssh)
 
 ## Description
 
